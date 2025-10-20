@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔑 Cổng Truy Cập VIP - Buff TikTok Phong Pro</title>
+    <title>⚡ Dịch Vụ Tăng Tương Tác TikTok - Phong Pro</title>
     <style>
-        /* CSS: Giao diện Chuyên nghiệp, Tối ưu chuyển đổi và Màn hình Khóa */
+        /* CSS: Giao diện Chuyên nghiệp, Tối ưu chuyển đổi và Iframe Lớn */
         :root {
             --primary-color: #e63946; /* Đỏ - Màu thương hiệu/CTA */
             --secondary-color: #457b9d; /* Xanh Navy - Màu nền, tiêu đề */
             --light-bg: #f1faee; /* Xanh lá cây nhạt - Nền khối */
             --text-color: #1d3557;
-            --key-bg: #fdf5e6; /* Màu kem cho màn hình key */
         }
 
         body {
@@ -23,86 +22,35 @@
             text-align: center;
         }
         
-        /* Cấu trúc Màn hình */
         .screen {
             min-height: 100vh;
-            display: none;
+            display: flex; /* Mặc định hiển thị trang chính */
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
             box-sizing: border-box;
             flex-direction: column;
         }
 
-        .screen.active {
-            display: flex;
-        }
-
-        /* --- 1. MÀN HÌNH KHÓA KEY --- */
-        #key-screen {
-            background: linear-gradient(135deg, var(--key-bg), #fff0f5);
-        }
-
-        .key-panel {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            max-width: 90%;
-            width: 400px;
-        }
-
-        .key-panel h2 {
-            font-size: 1.8em;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        #key-input {
-            width: 90%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            font-size: 1.1em;
-            text-align: center;
-            transition: border-color 0.3s;
-        }
-        
-        #key-input:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        #key-message {
-            color: var(--primary-color);
-            min-height: 20px;
-            margin-top: 5px;
-            font-weight: 600;
-        }
-        
-        /* --- 2. LANDING PAGE (Sau khi nhập Key) --- */
-
         /* Header/Banner */
         .hero-banner {
+            width: 100%;
             background: linear-gradient(135deg, var(--secondary-color) 0%, #a8dadc 100%);
             color: white;
-            padding: 80px 20px 40px;
+            padding: 60px 20px 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .hero-banner h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 900;
         }
 
         .hero-banner p {
-            font-size: 1.3em;
+            font-size: 1.1em;
             opacity: 0.9;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         /* CTA Button */
@@ -130,8 +78,9 @@
 
         /* Section Styling */
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
+            width: 100%;
         }
 
         h2 {
@@ -143,63 +92,14 @@
             padding-bottom: 10px;
         }
 
-        .benefits {
-            background-color: var(--light-bg);
-        }
-
-        .benefits-grid {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            flex: 1 1 30%;
-            min-width: 250px;
-            transition: transform 0.3s;
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            border-bottom: 4px solid var(--primary-color);
-        }
-
-        .benefit-item span {
-            font-size: 3em;
-            color: var(--secondary-color);
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .benefit-item h3 {
-            font-size: 1.4em;
-            color: var(--text-color);
-            margin-top: 0;
-        }
-        
-        /* Instructions Section */
         .instructions-block {
             background: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            margin: 40px auto;
+            margin: 0 auto;
             text-align: left;
-        }
-
-        .instructions-block h3 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            text-align: center;
-            margin-bottom: 25px;
         }
 
         ol {
@@ -217,6 +117,48 @@
             color: var(--secondary-color);
         }
 
+        /* --- KHU VỰC IFRAME LỚN --- */
+        .iframe-section {
+            background-color: var(--light-bg);
+            padding: 40px 0;
+        }
+
+        .iframe-container {
+            width: 95%; /* Chiếm gần hết chiều ngang */
+            max-width: 1200px;
+            height: 700px; /* Chiều cao rất lớn, tạo hình chữ nhật to */
+            margin: 20px auto;
+            border: 7px solid var(--primary-color); /* Viền màu nổi bật */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden; 
+            position: relative;
+        }
+
+        #buff-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        #iframe-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 20px;
+            text-align: center;
+        }
+
         /* Footer */
         footer {
             background-color: var(--secondary-color);
@@ -224,35 +166,21 @@
             padding: 30px 20px;
             font-size: 0.9em;
             font-weight: 500;
+            width: 100%;
         }
-
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-banner h1 {
-                font-size: 2.2em;
+                font-size: 2em;
             }
-            .benefits-grid {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .benefit-item {
-                flex: 1 1 100%;
+            .iframe-container {
+                height: 500px; /* Giảm chiều cao trên thiết bị di động */
             }
         }
     </style>
 </head>
 <body>
-
-    <div id="key-screen" class="screen active">
-        <div class="key-panel">
-            <span style="font-size: 50px;">🔒</span>
-            <h2>VUI LÒNG NHẬP MÃ TRUY CẬP VIP</h2>
-            <p style="color: #666;">Đây là cổng dành riêng cho khách hàng thân thiết. Vui lòng nhập Key để tiếp tục.</p>
-            <input type="password" id="key-input" placeholder="Nhập Key của bạn...">
-            <div id="key-message"></div>
-            <button id="access-btn" class="cta-btn">TIẾP TỤC</button>
-        </div>
-    </div>
 
     <div id="main-content" class="screen">
         
@@ -260,48 +188,42 @@
             <h1>✨ HỆ THỐNG BUFF TIKTOK SỐ 1 - **PHONG PRO** ✨</h1>
             <p>Giải pháp tăng View, Tim tức thì, đưa video của bạn lên xu hướng nhanh chóng và an toàn!</p>
             <a href="https://zefoy.com" target="_blank" class="cta-btn">
-                NHẤP VÀO ĐÂY ĐỂ VÀO WEB BUFF CHÍNH
+                MỞ TRANG BUFF TRONG CỬA SỔ MỚI
             </a>
         </div>
 
-        <section class="benefits">
-            <h2>🔥 Vì Sao Nên Chọn Dịch Vụ Của Phong?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <span>⚡</span>
-                    <h3>Tốc Độ Thần Tốc</h3>
-                    <p>Nhận ngay +25 Tim hoặc +500 View chỉ sau một lần thao tác. Không cần chờ đợi lâu.</p>
-                </div>
-                <div class="benefit-item">
-                    <span>🛡️</span>
-                    <h3>An Toàn Tuyệt Đối</h3>
-                    <p>Phương pháp được kiểm chứng, không yêu cầu mật khẩu, đảm bảo tài khoản TikTok của bạn an toàn 100%.</p>
-                </div>
-                <div class="benefit-item">
-                    <span>📈</span>
-                    <h3>Hút Follow Tự Nhiên</h3>
-                    <p>Tương tác ban đầu cao giúp thuật toán ưu tiên, từ đó thu hút hàng ngàn Follower thực tế.</p>
-                </div>
-            </div>
-        </section>
-
         <section class="how-to-use">
-            <h2>💡 3 Bước Đơn Giản Để Bắt Đầu</h2>
+            <h2>💡 Hướng Dẫn Sử Dụng Web Buff</h2>
             
             <div class="instructions-block">
-                <h3>Hướng Dẫn Sử Dụng Web Buff Views/Tim</h3>
                 <ol>
-                    <li>Truy cập vào **[WEB BUFF CHÍNH]** bằng nút màu đỏ phía trên. Nếu thấy quảng cáo, vui lòng xem để ủng hộ.</li>
-                    <li>**Giải Mã CAPTCHA** và **Chọn dịch vụ** bạn muốn (Views/Tim). Dán **Link Video** và nhấn **Tìm kiếm (Search)**.</li>
-                    <li>Hệ thống sẽ hiện **thời gian chờ**. Sau khi chờ xong, nhấn **Tìm kiếm lại** và ấn nút **BUFF** để nhận **+25 Tim** hoặc **+500 View**. Muốn buff tiếp, chỉ cần lặp lại bước này!
+                    <li>Truy cập vào **[WEB BUFF CHÍNH]** bằng nút màu đỏ phía trên hoặc ngay trong khung bên dưới. Nếu thấy quảng cáo, vui lòng xem.</li>
+                    <li>**Giải Mã CAPTCHA** và **Chọn dịch vụ** (Views/Tim). Dán **Link Video** và nhấn **Tìm kiếm (Search)**.</li>
+                    <li>Hệ thống sẽ hiện **thời gian chờ**. Sau khi chờ xong, nhấn **Tìm kiếm lại** và ấn nút **BUFF** để nhận **+25 Tim** hoặc **+500 View**. Muốn buff tiếp, chỉ cần lặp lại!
                         <br><br>
-                        *Lưu ý quan trọng: **KHÔNG RESET** trang trong thời gian chờ để tránh mất lượt.*
+                        *Lưu ý quan trọng: **KHÔNG RESET** trang trong thời gian chờ.*
                     </li>
                 </ol>
             </div>
+        </section>
+
+        <section class="iframe-section">
+            <h2>🖥️ Trải Nghiệm Web Buff Ngay Trên Trang Của Phong!</h2>
+            <div class="iframe-container">
+                <iframe 
+                    src="https://zefoy.com" 
+                    title="Giao diện Web Buff" 
+                    id="buff-iframe"
+                    sandbox="allow-scripts allow-forms allow-same-origin"
+                    loading="lazy">
+                </iframe>
+                <div id="iframe-overlay">
+                    <p>⚠️ **LỖI HIỂN THỊ (Do trang đích chặn nhúng)**<br><br>Trang Web Buff (zefoy.com) không cho phép nhúng trực tiếp vì lý do bảo mật.<br>Vui lòng nhấn nút **MỞ TRANG BUFF TRONG CỬA SỔ MỚI** phía trên để truy cập và sử dụng dịch vụ!</p>
+                </div>
+            </div>
             
             <a href="https://zefoy.com" target="_blank" class="cta-btn" style="margin-top: 20px;">
-                TIẾN HÀNH BUFF NGAY BÂY GIỜ!
+                TRUY CẬP WEB BUFF CHÍNH NGAY!
             </a>
         </section>
 
@@ -310,48 +232,5 @@
             Vui lòng đọc kỹ hướng dẫn trước khi sử dụng.
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const keyScreen = document.getElementById('key-screen');
-            const mainContent = document.getElementById('main-content');
-            const keyInput = document.getElementById('key-input');
-            const accessBtn = document.getElementById('access-btn');
-            const keyMessage = document.getElementById('key-message');
-
-            // Các Key hợp lệ
-            const validKeys = ['19022013', '24102013'];
-
-            function checkKey() {
-                const enteredKey = keyInput.value.trim();
-                
-                if (validKeys.includes(enteredKey)) {
-                    keyMessage.style.color = 'green';
-                    keyMessage.textContent = 'Key hợp lệ! Đang chuyển hướng...';
-                    
-                    // Chuyển sang Landing Page sau 1 giây
-                    setTimeout(() => {
-                        keyScreen.classList.remove('active');
-                        mainContent.classList.add('active');
-                        window.scrollTo(0, 0);
-                    }, 1000);
-                } else {
-                    keyMessage.style.color = var(--primary-color);
-                    keyMessage.textContent = 'Key không hợp lệ. Vui lòng kiểm tra lại.';
-                    keyInput.value = ''; // Xóa input
-                }
-            }
-
-            // Gán sự kiện cho nút TIẾP TỤC
-            accessBtn.addEventListener('click', checkKey);
-
-            // Gán sự kiện cho phím Enter
-            keyInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    checkKey();
-                }
-            });
-        });
-    </script>
 </body>
-    </html>
+</html>
