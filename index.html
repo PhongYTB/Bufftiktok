@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Buff TikTok - Phong</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0e6ff 0%, #fff0f5 100%); /* Nền gradient nhẹ nhàng */
+            color: #333;
+            text-align: center;
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .screen.active {
+            display: flex;
+            flex-direction: column; /* Thêm để căn chỉnh nội dung theo chiều dọc */
+        }
+
+        /* --- Welcome Screen Styling --- */
+        #welcome-screen {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Hồng đào ngọt ngào */
+            color: white;
+        }
+
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .chibi-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ff7e5f;
+            /* Placeholder: Thay thế bằng URL hình ảnh anime của bạn */
+            background-color: #ffd700; 
+            content: "✨";
+            font-size: 50px;
+            line-height: 110px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .welcome-card h1 {
+            color: #ff6f61; /* Màu đỏ cam */
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        /* --- Button Styling --- */
+        .cute-btn {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient nút */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+        }
+
+        /* --- Buff Page Styling --- */
+        #buff-page {
+            background-color: #f8faff; /* Màu nền nhẹ */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 30px 20px;
+            background: linear-gradient(to right, #6dd5ed, #2193b0); /* Màu xanh biển */
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .buff-now-btn {
+            margin-top: 15px;
+            background: linear-gradient(45deg, #a770ef, #cf8bf3, #fdb99b); /* Gradient mạnh mẽ */
+        }
+
+        .instructions-section {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .instructions-section h2 {
+            color: #4b0082; /* Tím đậm */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #fdb99b;
+            padding-bottom: 10px;
+        }
+
+        .step {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #ff6f61; /* Màu nổi bật */
+            color: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step h3 {
+            color: #4CAF50; /* Xanh lá cây */
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+        }
+
+        .step p {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .footer {
+            width: 100%;
+            padding: 15px;
+            background-color: #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-card">
+            <div class="chibi-img"></div> 
+            <h1>💕 Chào mừng bạn đến với dịch vụ Buff Follow của **Phong**! 💕</h1>
+            <p>Giao diện nhiều màu, chibi anime dễ thương 🌈. Hãy cùng nhau tăng Follow/Tim/View TikTok thôi nào!</p>
+            <button id="enter-site-btn" class="cute-btn">
+                Ấn vào đây để đến trang Buff Follow
+            </button>
+        </div>
+    </div>
+
+    <div id="buff-page" class="screen">
+        <header>
+            <h1 class="page-title">HƯỚNG DẪN BUFF TIM & VIEW TIKTOK</h1>
+            <button class="cute-btn buff-now-btn" onclick="window.open('https://zefoy.com', '_blank');">
+                🔥 ĐẾN TRANG BUFF FOLLOW NGAY! 🔥
+            </button>
+        </header>
+
+        <section class="instructions-section">
+            <h2>📜 Các bước thực hiện chi tiết trên Zefoy.com 📜</h2>
+            
+            <div class="step">
+                <span class="step-number">B1</span>
+                <div>
+                    <h3>Xem quảng cáo (nếu có)</h3>
+                    <p>Sau khi truy cập, nếu thấy nút **"Xem Quảng Cáo"**, bạn hãy kiên nhẫn xem để ủng hộ hệ thống nhé!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">B2</span>
+                <div>
+                    <h3>Giải CAPTCHA</h3>
+                    <p>Nếu có bước **giải CAPTCHA** ghi số/chữ, bạn chỉ cần **ghi lại theo thứ tự từ đầu đến cuối**, bao gồm cả những chữ/số có vẻ cao hơn hoặc thấp hơn.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">B3</span>
+                <div>
+                    <h3>Chọn dịch vụ</h3>
+                    <p>Sau khi vào được trang, hãy **chọn loại buff** bạn muốn (ví dụ: Buff Tim hoặc Buff View).</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">B4</span>
+                <div>
+                    <h3>Nhập Link Video</h3>
+                    <p>Nhập **Link Video** TikTok của bạn vào ô và ấn nút **Search** (thường là nút có hình kính lúp 🔍).</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">B5</span>
+                <div>
+                    <h3>Chờ đợi và không F5</h3>
+                    <p>Hệ thống sẽ hiện **thời gian chờ**. Trong lúc đợi, bạn **có thể thoát ra xem TikTok** nhưng **KHÔNG được F5 (reset) lại trang web** nếu không sẽ phải buff lại từ đầu.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">B6</span>
+                <div>
+                    <h3>Thực hiện Buff</h3>
+                    <p>Hết thời gian chờ, ấn **Search lại**. Hệ thống sẽ hiện số Tim/View hiện tại. Ấn vào nút **"Buff"** (thường là nút màu xanh) để nhận **+25 Tim** hoặc **+500 Lượt Xem**.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">B7</span>
+                <div>
+                    <h3>Buff Lặp lại</h3>
+                    <p>Muốn **buff tiếp**, chỉ cần ấn **Search lại** và đợi vòng lặp thời gian tiếp theo. Cứ lặp lại B5 và B6!</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            © 2025 Dịch vụ của Phong - Chúc bạn có kênh TikTok triệu Follow!
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const buffPage = document.getElementById('buff-page');
+            const enterButton = document.getElementById('enter-site-btn');
+
+            // Chuyển từ màn hình chào mừng sang màn hình hướng dẫn
+            enterButton.addEventListener('click', () => {
+                welcomeScreen.classList.remove('active');
+                buffPage.classList.add('active');
+                
+                // Cuộn lên đầu trang sau khi chuyển
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+  </html>
